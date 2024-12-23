@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getdata()">GET</button>
+    <div id="123"></div>
+    <script>
+        let s="<table>"
+        function getdata() {
+            const req=new  XMLHttpRequest()
+            req.open("GET","http://localhost:3000/Sasi")
+            req.onload=function(){
+                const data=JSON.parse(this.responseText);
+                for(let i of data){
+                    s+='<tr>';
+                    s+='<td>'+i['name']+'</td>'
+                    s+='<td>'+i['price']+'</td>'
+                    s+='<td>'+i['category']+'</td>'
+                    s+='</tr>';
+                }
+            s+='</table>'
+            document.getElementById('123').innerHTML=s;
+            }
+            req.send()
+        }
+    </script>
+</body>
+</html>

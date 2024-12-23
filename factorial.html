@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <h1>Factorial Calculator</h1>
+   
+    <script>
+        // Prompt the user to input a number
+        let num = parseInt(prompt("Enter a number to find its factorial:"));
+
+        // Function to calculate factorial
+        function factorial(n) {
+            if (n < 0) return "Factorial is not defined for negative numbers.";
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        // Calculate the factorial and display it
+        let fact = factorial(num);
+
+        // Display the result on the web page
+        document.write("<h2>The factorial of " + num + " is: " + fact + "</h2>");
+    </script>
+</body>
+</html>

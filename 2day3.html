@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="postdata()">POST</button>
+    <script>
+        function postdata(){
+            const ns={}
+            ns.id=prompt("Enter roll no")
+            ns.name=prompt("Enter name")
+            ns.price=prompt("Enter price")
+            ns.category=prompt("Enter category")
+            const req=new XMLHttpRequest();
+            req.open("POST","http://localhost:3000/Sasi",true)
+            req.onload=function(){
+                document.getElementById('123').innerHTML="your data is posted";
+            }
+            req.send(JSON.stringify(ns))
+        }
+    </script>
+</body>
+</html>
+
